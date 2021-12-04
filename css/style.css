@@ -1,0 +1,303 @@
+body {
+  font-family: "Roboto", sans-serif;
+  color: #000000;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+.btn {
+  border-radius: 2rem;
+  border: 0px;
+  padding: 18px 22px;
+  font-weight: 500;
+  background: linear-gradient(350deg, #9356dc 0%, #ff79da 100%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 3px 6px 1px #c6c6c6;
+  cursor: pointer;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* .container {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & span {
+    height: 300px;
+    width: 100px;
+    background-color: blue;
+    margin: 20px;
+    animation: loader 1s infinite alternate;
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.2) translateX(50px);
+    opacity: 1;
+  }
+}
+
+$base-color: #036;
+*/
+.header {
+  padding: 10px 0 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Shrikhand", cursive;
+  font-size: 2rem;
+}
+
+.footer {
+  background-color: #353535;
+  color: white;
+  padding: 10px 20px 20px 20px;
+}
+@media (min-width: 992px) {
+  .footer {
+    padding: 10px 20px 10px 20px;
+  }
+  .footer ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+.footer li {
+  font-size: 0.9rem;
+  margin: 8px 0;
+}
+.footer li a:hover {
+  text-decoration: underline;
+}
+.footer li i {
+  width: 0.6875rem;
+  margin-right: 10px;
+}
+.footer li:first-child {
+  font-family: "Shrikhand", cursive;
+  margin: 15px 0;
+  font-size: 1.1rem;
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.location {
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  box-shadow: inset 0px 12px 2px -10px #cfcfcf;
+}
+.location p {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.74);
+  position: relative;
+}
+.location p::after {
+  content: "\f3c5";
+  position: absolute;
+  left: -1.5rem;
+  color: rgba(0, 0, 0, 0.74);
+  font-family: "Font Awesome 5 Free";
+}
+
+.explore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f6f6f6;
+  padding: 50px 20px;
+}
+.explore__title {
+  text-align: center;
+  margin: 0 50px;
+  font-size: 1.5rem;
+}
+.explore__subtitle {
+  text-align: center;
+  margin: 15px 0 25px 0;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.tutorial {
+  padding: 50px 20px;
+  counter-reset: TotalStep;
+}
+.tutorial__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 30px;
+}
+@media (min-width: 992px) {
+  .tutorial__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 30px;
+  }
+}
+.tutorial__title {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+.tutorial__step {
+  background-color: #f6f6f6;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.13);
+  padding: 30px 35px;
+  border-radius: 25px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+@media (min-width: 992px) {
+  .tutorial__step {
+    margin: 0;
+  }
+}
+.tutorial__step i {
+  color: grey;
+  margin-right: 25px;
+  font-size: 1.1rem;
+}
+.tutorial__step:hover {
+  background-color: #f5edff;
+}
+.tutorial__step:hover > i {
+  color: #9356dc;
+}
+.tutorial__step::before {
+  counter-increment: TotalStep 1;
+  content: counter(TotalStep) " ";
+  position: absolute;
+  left: 0;
+  background-color: #9356dc;
+  color: white;
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-50%);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+.tutorial__step:last-child {
+  margin-bottom: 0;
+}
+
+.restaurant {
+  padding: 50px 20px;
+  background-color: #f6f6f6;
+}
+.restaurant__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+}
+@media (min-width: 992px) {
+  .restaurant__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 30px;
+  }
+}
+.restaurant h2 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+.restaurant .new::after {
+  position: absolute;
+  content: "Nouveau";
+  top: 15px;
+  right: 15px;
+  background-color: #99e2d0;
+  padding: 5px 10px;
+  color: #278870;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.restaurant__card {
+  background-color: white;
+  height: 250px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.13);
+  transition: 0.3s;
+}
+.restaurant__card:hover {
+  transform: scale(1.02);
+}
+.restaurant__card__img {
+  position: relative;
+  height: 70%;
+}
+.restaurant__card__img img {
+  position: absolute;
+  inset: 0px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+.restaurant__card__content {
+  display: flex;
+  padding: 15px;
+  justify-content: space-between;
+}
+.restaurant__card__content__title {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.restaurant__card__content__title span {
+  font-weight: 300;
+}
+.restaurant__card__content__heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */

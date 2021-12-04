@@ -1,0 +1,16 @@
+@use "../abstracts/" as *;
+
+.btn {
+  border-radius: 2rem;
+  border: 0px;
+  padding: 18px 22px;
+  font-weight: 500;
+  background: linear-gradient(350deg, $primary-color 0%, $secondary-color 100%);
+  color: white;
+  @include flex-center;
+  box-shadow: 0px 3px 6px 1px $shadow-btn;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
