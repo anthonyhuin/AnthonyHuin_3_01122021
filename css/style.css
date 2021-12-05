@@ -267,7 +267,7 @@ $base-color: #036;
   transition: 0.3s;
 }
 .restaurant__card:hover {
-  transform: scale(1.02);
+  transform: scale(1);
 }
 .restaurant__card__img {
   position: relative;
@@ -298,6 +298,34 @@ $base-color: #036;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 2.2rem;
+  position: relative;
+}
+.restaurant__card__content__heart .heart--nofill {
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+.restaurant__card__content__heart .heart--nofill:hover + .heart--fill {
+  opacity: 1;
+  transition: 0.2s;
+}
+.restaurant__card__content__heart .heart--nofill:hover {
+  opacity: 0;
+  transition: 0.2s;
+}
+.restaurant__card__content__heart .heart--fill {
+  z-index: 1;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  background: -webkit-linear-gradient(350deg, #9356dc, #ff79da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#svg-coeur {
+  position: absolute;
 }
 
 /*# sourceMappingURL=style.css.map */
