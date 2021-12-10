@@ -28,9 +28,6 @@ li {
   font-weight: 500;
   background: linear-gradient(350deg, #9356dc 0%, #ff79da 100%);
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   box-shadow: 0px 3px 6px 1px #c6c6c6;
   cursor: pointer;
 }
@@ -108,6 +105,135 @@ $base-color: #036;
   font-family: "Shrikhand", cursive;
   margin: 15px 0;
   font-size: 1.1rem;
+}
+
+.picture-menu {
+  z-index: -3;
+  background: center/cover no-repeat url(../../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+  width: 100%;
+  min-height: 800px;
+  max-height: 31.25rem;
+  z-index: -3;
+}
+
+.menu {
+  margin-top: -50px;
+  background: #f6f6f6;
+  border: 1px solid transparent;
+  border-radius: 50px 50px 0 0;
+  z-index: 8;
+  padding: 0 20px;
+  margin: -50px auto 0 auto;
+  max-width: 1400px;
+}
+.menu__title {
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu h2 {
+  font-family: "Shrikhand", cursive;
+  font-weight: 300;
+}
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px;
+}
+@media (min-width: 992px) {
+  .menu__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-columns: 33.3%;
+    grid-template-rows: 1fr;
+    grid-gap: 30px;
+  }
+}
+
+.menu__container h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  position: relative;
+  text-transform: uppercase;
+}
+.menu__container h3::after {
+  position: absolute;
+  content: "";
+  bottom: -8px;
+  left: 0;
+  height: 3px;
+  background-color: #99e2d0;
+  width: 40px;
+}
+
+.menu__card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.13);
+  margin: 20px 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  cursor: pointer;
+}
+.menu__card__content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex: 1;
+}
+.menu__card__content__label {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+}
+.menu__card__content__label b,
+.menu__card__content__label span {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+}
+.menu__card__content__price {
+  display: flex;
+  align-items: flex-end;
+  margin-left: 30px;
+}
+.menu__card:hover .menu__card__confirm {
+  margin-right: -1rem;
+}
+.menu__card:hover .menu__card__confirm i {
+  transform: rotate(720deg);
+  transition: 0.4s;
+}
+.menu__card__confirm {
+  background-color: #99e2d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  margin: -1rem -5rem -1rem 1rem;
+  font-size: 1.4rem;
+  color: white;
+  transition: 0.4s;
+}
+
+.order {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f6f6f6;
+  max-width: 1400px;
+  margin: auto;
 }
 
 .container {
