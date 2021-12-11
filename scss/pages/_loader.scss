@@ -48,6 +48,7 @@
 @keyframes display {
   100% {
     z-index: -10;
+    visibility: hidden;
   }
 }
 
