@@ -1,0 +1,58 @@
+@use "../abstracts/" as *;
+
+.loader__container {
+  position: fixed;
+  @include flex-center;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.904);
+  height: 100vh;
+  flex-direction: column;
+  animation: display 4.9s linear forwards;
+  z-index: 9999;
+  overflow-x: hidden;
+}
+
+.loader-anim {
+  perspective: 700px;
+  & span {
+    font-family: $font-family-logo;
+    font-size: 3rem;
+    display: inline-block;
+    animation: loader 1.8s linear forwards;
+    transform-origin: 0 70%;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    opacity: 0;
+  }
+}
+
+@keyframes loader {
+  0% {
+    color: $tertiary-color;
+    opacity: 1;
+  }
+  33% {
+    transform: rotateX(360deg);
+    color: $secondary-color;
+  }
+  66% {
+    color: $primary-color;
+  }
+  100% {
+    transform: rotatex(360deg);
+    color: black;
+    opacity: 1;
+  }
+}
+
+@keyframes display {
+  100% {
+    z-index: -10;
+  }
+}
+
+@for $i from 1 to 9 {
+  .loader__container span:nth-child(#{$i}) {
+    animation-delay: #{$i * 0.4s};
+  }
+}
