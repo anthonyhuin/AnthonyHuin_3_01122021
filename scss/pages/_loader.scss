@@ -7,7 +7,7 @@
   background-color: rgba(255, 255, 255, 0.904);
   height: 100vh;
   flex-direction: column;
-  animation: display 4.9s linear forwards;
+  animation: display 3.3s linear forwards;
   z-index: 9999;
   overflow-x: hidden;
 }
@@ -46,14 +46,19 @@
 }
 
 @keyframes display {
+  80% {
+    opacity: 1;
+  }
+
   100% {
     z-index: -10;
     visibility: hidden;
+    opacity: 0;
   }
 }
 
 @for $i from 1 to 9 {
   .loader__container span:nth-child(#{$i}) {
-    animation-delay: #{$i * 0.4s};
+    animation-delay: #{$i * 0.2s};
   }
 }

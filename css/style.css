@@ -457,7 +457,7 @@ li {
   background-color: rgba(255, 255, 255, 0.904);
   height: 100vh;
   flex-direction: column;
-  animation: display 4.9s linear forwards;
+  animation: display 3.3s linear forwards;
   z-index: 9999;
   overflow-x: hidden;
 }
@@ -495,41 +495,45 @@ li {
   }
 }
 @keyframes display {
+  80% {
+    opacity: 1;
+  }
   100% {
     z-index: -10;
     visibility: hidden;
+    opacity: 0;
   }
 }
 .loader__container span:nth-child(1) {
-  animation-delay: 0.4s;
+  animation-delay: 0.2s;
 }
 
 .loader__container span:nth-child(2) {
-  animation-delay: 0.8s;
+  animation-delay: 0.4s;
 }
 
 .loader__container span:nth-child(3) {
-  animation-delay: 1.2s;
+  animation-delay: 0.6s;
 }
 
 .loader__container span:nth-child(4) {
-  animation-delay: 1.6s;
+  animation-delay: 0.8s;
 }
 
 .loader__container span:nth-child(5) {
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 
 .loader__container span:nth-child(6) {
-  animation-delay: 2.4s;
+  animation-delay: 1.2s;
 }
 
 .loader__container span:nth-child(7) {
-  animation-delay: 2.8s;
+  animation-delay: 1.4s;
 }
 
 .loader__container span:nth-child(8) {
-  animation-delay: 3.2s;
+  animation-delay: 1.6s;
 }
 
 /*# sourceMappingURL=style.css.map */
