@@ -30,42 +30,17 @@ li {
   color: white;
   box-shadow: 0px 3px 6px 1px #c6c6c6;
   cursor: pointer;
+  transition: 0.3s;
 }
 .btn:hover {
   opacity: 0.8;
 }
 
-/* .container {
-  background-color: black;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  & span {
-    height: 300px;
-    width: 100px;
-    background-color: blue;
-    margin: 20px;
-    animation: loader 1s infinite alternate;
-  }
-}
-
-@keyframes loader {
-  0% {
-    transform: scale(1);
-    opacity: 0;
-  }
+@keyframes heart-fill {
   100% {
-    transform: scale(1.2) translateX(50px);
-    opacity: 1;
+    bottom: 200px;
   }
 }
-
-$base-color: #036;
-*/
 .header {
   padding: 10px 0 5px 0;
   display: flex;
@@ -98,8 +73,7 @@ $base-color: #036;
   text-decoration: underline;
 }
 .footer li i {
-  width: 0.6875rem;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .footer li:first-child {
   font-family: "Shrikhand", cursive;
@@ -107,13 +81,12 @@ $base-color: #036;
   font-size: 1.1rem;
 }
 
-.picture-menu {
-  z-index: -3;
-  background: center/cover no-repeat url(../../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+.picture-menu img {
   width: 100%;
-  min-height: 800px;
-  max-height: 31.25rem;
-  z-index: -3;
+  max-height: 50vh;
+  object-fit: cover;
+  z-index: -99;
+  position: relative;
 }
 
 .menu {
@@ -179,6 +152,7 @@ $base-color: #036;
   justify-content: space-between;
   overflow: hidden;
   cursor: pointer;
+  flex: 1;
 }
 .menu__card__content {
   display: flex;
@@ -192,14 +166,12 @@ $base-color: #036;
   flex: 1;
   white-space: nowrap;
   text-overflow: ellipsis;
-  display: block;
   overflow: hidden;
 }
 .menu__card__content__label b,
 .menu__card__content__label span {
   white-space: nowrap;
   text-overflow: ellipsis;
-  display: block;
   overflow: hidden;
 }
 .menu__card__content__price {
@@ -403,6 +375,7 @@ $base-color: #036;
   width: 100%;
   object-fit: cover;
   border-radius: 15px 15px 0 0;
+  z-index: 88;
 }
 .restaurant__card__content {
   display: flex;
@@ -427,17 +400,6 @@ $base-color: #036;
 .restaurant__card__content__heart i {
   transition: 0.2s;
 }
-.restaurant__card__content__heart .heart--nofill {
-  position: absolute;
-  right: 0;
-  z-index: 2;
-}
-.restaurant__card__content__heart .heart--nofill:hover + .heart--fill {
-  opacity: 1;
-}
-.restaurant__card__content__heart .heart--nofill:hover {
-  opacity: 0;
-}
 .restaurant__card__content__heart .heart--fill {
   z-index: 1;
   opacity: 0;
@@ -447,7 +409,41 @@ $base-color: #036;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.restaurant__card__content__heart .heart--fill::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  height: 2rem;
+  width: 2rem;
+  inset: 0;
+  background-color: white;
+  transition: 0.5s;
+}
+.restaurant__card__content__heart .heart--nofill {
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  opacity: 1;
+  transition: 0.5s;
+}
+.restaurant__card__content__heart .heart--nofill:hover {
+  opacity: 0;
+}
+.restaurant__card__content__heart .heart--nofill:hover + .heart--fill {
+  opacity: 1;
+}
+.restaurant__card__content__heart .heart--nofill:hover + .heart--fill::after {
+  animation: heartfill 1s ease-in-out forwards;
+}
 
+@keyframes heartfill {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -2rem;
+  }
+}
 #svg-coeur {
   position: absolute;
 }

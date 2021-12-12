@@ -1,12 +1,10 @@
 @use "../abstracts/" as *;
-.picture-menu {
-  z-index: -3;
-  background: center / cover no-repeat
-    url(../../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+.picture-menu img {
   width: 100%;
-  min-height: 800px;
-  max-height: PXtoREM(500);
-  z-index: -3;
+  max-height: 50vh;
+  object-fit: cover;
+  z-index: -99;
+  position: relative;
 }
 
 .menu {
@@ -74,6 +72,7 @@
   justify-content: space-between;
   overflow: hidden;
   cursor: pointer;
+  flex: 1;
 
   &__content {
     display: flex;
@@ -86,13 +85,13 @@
       flex: 1;
       white-space: nowrap;
       text-overflow: ellipsis;
-      display: block;
+
       overflow: hidden;
       & b,
       span {
         white-space: nowrap;
         text-overflow: ellipsis;
-        display: block;
+
         overflow: hidden;
       }
     }

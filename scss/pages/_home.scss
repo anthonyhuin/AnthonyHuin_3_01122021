@@ -159,6 +159,7 @@
         width: 100%;
         object-fit: cover;
         border-radius: 15px 15px 0 0;
+        z-index: 88;
       }
     }
     &__content {
@@ -182,18 +183,6 @@
         & i {
           transition: 0.2s;
         }
-        & .heart--nofill {
-          position: absolute;
-          right: 0;
-          z-index: 2;
-
-          &:hover + .heart--fill {
-            opacity: 1;
-          }
-          &:hover {
-            opacity: 0;
-          }
-        }
         & .heart--fill {
           z-index: 1;
           opacity: 0;
@@ -203,8 +192,43 @@
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
+        & .heart--fill::after {
+          content: "";
+          position: absolute;
+          z-index: 1;
+          height: 2rem;
+          width: 2rem;
+          inset: 0;
+          background-color: rgb(255, 255, 255);
+          transition: 0.5s;
+        }
+
+        & .heart--nofill {
+          position: absolute;
+          right: 0;
+          z-index: 2;
+          opacity: 1;
+          transition: 0.5s;
+          &:hover {
+            opacity: 0;
+          }
+          &:hover + .heart--fill {
+            opacity: 1;
+          }
+          &:hover + .heart--fill::after {
+            animation: heartfill 1s ease-in-out forwards;
+          }
+        }
       }
     }
+  }
+}
+@keyframes heartfill {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -2rem;
   }
 }
 
