@@ -1,5 +1,9 @@
-@keyframes heart-fill {
+@keyframes heartfill {
+  0% {
+    top: 0;
+  }
   100% {
-    bottom: 200px;
+    top: -2rem;
+    border-top-right-radius: 50%;
   }
 }

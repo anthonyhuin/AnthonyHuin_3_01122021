@@ -36,9 +36,63 @@ li {
   opacity: 0.8;
 }
 
-@keyframes heart-fill {
+.heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  position: relative;
+}
+.heart i {
+  transition: 0.2s;
+}
+.heart .heart--fill {
+  z-index: 1;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  background: -webkit-linear-gradient(1deg, #9356dc, #ff79da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.heart .heart--fill::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  height: 2rem;
+  width: 2rem;
+  inset: 0;
+  background-color: white;
+  transition: 0.5s;
+}
+.heart .heart--nofill {
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  opacity: 1;
+  transition: 0.5s;
+}
+.heart .heart--nofill:hover {
+  opacity: 0;
+}
+.heart .heart--nofill:hover + .heart--fill {
+  opacity: 1;
+}
+.heart .heart--nofill:hover + .heart--fill::after {
+  animation: heartfill 1s ease-in-out forwards;
+}
+
+.heartmenu .heart--fill::after {
+  background-color: #f6f6f6;
+}
+
+@keyframes heartfill {
+  0% {
+    top: 0;
+  }
   100% {
-    bottom: 200px;
+    top: -2rem;
+    border-top-right-radius: 50%;
   }
 }
 .header {
@@ -48,6 +102,15 @@ li {
   align-items: center;
   font-family: "Shrikhand", cursive;
   font-size: 2rem;
+  position: relative;
+}
+
+.header--arrow {
+  font-size: 1.3rem;
+  color: black;
+  position: absolute;
+  left: 30px;
+  top: 18px;
 }
 
 .footer {
@@ -100,7 +163,7 @@ li {
   max-width: 1400px;
 }
 .menu__title {
-  padding: 30px 0;
+  padding: 30px 16px 30px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -110,22 +173,18 @@ li {
   font-weight: 300;
 }
 
-.menu__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 10px;
-}
 @media (min-width: 992px) {
   .menu__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-columns: 33.3%;
-    grid-template-rows: 1fr;
-    grid-gap: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
   }
 }
 
+.menu__container {
+  flex: 1 1 33%;
+  min-width: 0;
+}
 .menu__container h3 {
   font-size: 1rem;
   font-weight: 400;
@@ -152,13 +211,15 @@ li {
   justify-content: space-between;
   overflow: hidden;
   cursor: pointer;
-  flex: 1;
 }
 .menu__card__content {
   display: flex;
   justify-content: space-between;
   width: 100%;
   flex: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .menu__card__content__label {
   display: flex;
@@ -199,13 +260,16 @@ li {
 }
 
 .order {
-  padding: 50px;
+  padding: 35px 0 85px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #f6f6f6;
   max-width: 1400px;
   margin: auto;
+}
+.order .btn {
+  padding: 15px 50px;
 }
 
 .container {
@@ -390,60 +454,7 @@ li {
 .restaurant__card__content__title span {
   font-weight: 300;
 }
-.restaurant__card__content__heart {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.7rem;
-  position: relative;
-}
-.restaurant__card__content__heart i {
-  transition: 0.2s;
-}
-.restaurant__card__content__heart .heart--fill {
-  z-index: 1;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  background: -webkit-linear-gradient(350deg, #9356dc, #ff79da);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.restaurant__card__content__heart .heart--fill::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  height: 2rem;
-  width: 2rem;
-  inset: 0;
-  background-color: white;
-  transition: 0.5s;
-}
-.restaurant__card__content__heart .heart--nofill {
-  position: absolute;
-  right: 0;
-  z-index: 2;
-  opacity: 1;
-  transition: 0.5s;
-}
-.restaurant__card__content__heart .heart--nofill:hover {
-  opacity: 0;
-}
-.restaurant__card__content__heart .heart--nofill:hover + .heart--fill {
-  opacity: 1;
-}
-.restaurant__card__content__heart .heart--nofill:hover + .heart--fill::after {
-  animation: heartfill 1s ease-in-out forwards;
-}
 
-@keyframes heartfill {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: -2rem;
-  }
-}
 #svg-coeur {
   position: absolute;
 }
@@ -454,7 +465,7 @@ li {
   justify-content: center;
   align-items: center;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.904);
+  background-color: rgba(255, 255, 255, 0.959);
   height: 100vh;
   flex-direction: column;
   animation: display 3.3s linear forwards;
