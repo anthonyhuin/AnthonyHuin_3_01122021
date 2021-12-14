@@ -168,9 +168,9 @@ li {
   justify-content: space-between;
   align-items: center;
 }
-.menu h2 {
+.menu h1 {
   font-family: "Shrikhand", cursive;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 @media (min-width: 992px) {
@@ -473,17 +473,12 @@ li {
   overflow-x: hidden;
 }
 
-.loader-anim {
-  perspective: 700px;
-}
 .loader-anim span {
   font-family: "Shrikhand", cursive;
   font-size: 3rem;
   display: inline-block;
   animation: loader 1.8s linear forwards;
-  transform-origin: 0 70%;
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
+  transform-origin: 0 80%;
   opacity: 0;
 }
 
