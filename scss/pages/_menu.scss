@@ -38,7 +38,6 @@
 
 .menu__container {
   flex: 1 1 33%;
-
   min-width: 0;
   & h3 {
     font-size: 1rem;
@@ -124,5 +123,26 @@
   margin: auto;
   & .btn {
     padding: 15px 50px;
+  }
+}
+
+.menu__card {
+  animation: menu-card 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes menu-card {
+  0% {
+    transform: translatey(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translatey(0px);
+  }
+}
+
+@for $i from 1 to 10 {
+  .delay-#{$i} {
+    animation-delay: #{$i * 0.15s};
   }
 }

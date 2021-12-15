@@ -50,8 +50,9 @@
     z-index: 2;
     opacity: 1;
     transition: 0.5s;
+
     &:hover {
-      opacity: 0;
+      opacity: 0.5;
     }
     &:hover + .heart--fill {
       opacity: 1;

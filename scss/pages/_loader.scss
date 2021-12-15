@@ -17,7 +17,7 @@
     font-family: $font-family-logo;
     font-size: 3rem;
     display: inline-block;
-    animation: loader 1.8s linear forwards;
+    animation: loader 1.8s linear infinite;
     transform-origin: 0 80%;
 
     opacity: 0;

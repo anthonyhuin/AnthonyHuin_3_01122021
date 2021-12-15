@@ -73,7 +73,7 @@ li {
   transition: 0.5s;
 }
 .heart .heart--nofill:hover {
-  opacity: 0;
+  opacity: 0.5;
 }
 .heart .heart--nofill:hover + .heart--fill {
   opacity: 1;
@@ -272,6 +272,56 @@ li {
   padding: 15px 50px;
 }
 
+.menu__card {
+  animation: menu-card 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes menu-card {
+  0% {
+    transform: translatey(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translatey(0px);
+  }
+}
+.delay-1 {
+  animation-delay: 0.15s;
+}
+
+.delay-2 {
+  animation-delay: 0.3s;
+}
+
+.delay-3 {
+  animation-delay: 0.45s;
+}
+
+.delay-4 {
+  animation-delay: 0.6s;
+}
+
+.delay-5 {
+  animation-delay: 0.75s;
+}
+
+.delay-6 {
+  animation-delay: 0.9s;
+}
+
+.delay-7 {
+  animation-delay: 1.05s;
+}
+
+.delay-8 {
+  animation-delay: 1.2s;
+}
+
+.delay-9 {
+  animation-delay: 1.35s;
+}
+
 .container {
   max-width: 1400px;
   margin: auto;
@@ -439,7 +489,6 @@ li {
   width: 100%;
   object-fit: cover;
   border-radius: 15px 15px 0 0;
-  z-index: 88;
 }
 .restaurant__card__content {
   display: flex;
@@ -477,7 +526,7 @@ li {
   font-family: "Shrikhand", cursive;
   font-size: 3rem;
   display: inline-block;
-  animation: loader 1.8s linear forwards;
+  animation: loader 1.8s linear infinite;
   transform-origin: 0 80%;
   opacity: 0;
 }
