@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
 body {
   font-family: "Roboto", sans-serif;
   color: #000000;
@@ -36,6 +37,15 @@ li {
   opacity: 0.8;
 }
 
+@keyframes heartfill {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -2rem;
+    border-top-right-radius: 50%;
+  }
+}
 .heart {
   display: flex;
   justify-content: center;
@@ -86,15 +96,89 @@ li {
   background-color: #f6f6f6;
 }
 
-@keyframes heartfill {
+.loader__container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.959);
+  height: 100vh;
+  flex-direction: column;
+  animation: display 3.3s linear forwards;
+  z-index: 9999;
+  overflow-x: hidden;
+}
+
+.loader-anim span {
+  font-family: "Shrikhand", cursive;
+  font-size: 3rem;
+  display: inline-block;
+  animation: loader 1.8s linear infinite;
+  transform-origin: 0 80%;
+  opacity: 0;
+}
+
+@keyframes loader {
   0% {
-    top: 0;
+    color: #99e2d0;
+    opacity: 1;
+  }
+  33% {
+    transform: rotateX(360deg);
+    color: #ff79da;
+  }
+  66% {
+    color: #9356dc;
   }
   100% {
-    top: -2rem;
-    border-top-right-radius: 50%;
+    transform: rotatex(360deg);
+    color: black;
+    opacity: 1;
   }
 }
+@keyframes display {
+  80% {
+    opacity: 1;
+  }
+  100% {
+    z-index: -10;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+.loader__container span:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.loader__container span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.loader__container span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.loader__container span:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.loader__container span:nth-child(5) {
+  animation-delay: 1s;
+}
+
+.loader__container span:nth-child(6) {
+  animation-delay: 1.2s;
+}
+
+.loader__container span:nth-child(7) {
+  animation-delay: 1.4s;
+}
+
+.loader__container span:nth-child(8) {
+  animation-delay: 1.6s;
+}
+
 .header {
   padding: 10px 0 5px 0;
   display: flex;
@@ -466,6 +550,7 @@ li {
   color: #278870;
   font-weight: 500;
   font-size: 0.9rem;
+  z-index: 3;
 }
 .restaurant__card {
   background-color: white;
@@ -489,6 +574,7 @@ li {
   width: 100%;
   object-fit: cover;
   border-radius: 15px 15px 0 0;
+  z-index: 2;
 }
 .restaurant__card__content {
   display: flex;
@@ -506,89 +592,6 @@ li {
 
 #svg-coeur {
   position: absolute;
-}
-
-.loader__container {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  inset: 0;
-  background-color: rgba(255, 255, 255, 0.959);
-  height: 100vh;
-  flex-direction: column;
-  animation: display 3.3s linear forwards;
-  z-index: 9999;
-  overflow-x: hidden;
-}
-
-.loader-anim span {
-  font-family: "Shrikhand", cursive;
-  font-size: 3rem;
-  display: inline-block;
-  animation: loader 1.8s linear infinite;
-  transform-origin: 0 80%;
-  opacity: 0;
-}
-
-@keyframes loader {
-  0% {
-    color: #99e2d0;
-    opacity: 1;
-  }
-  33% {
-    transform: rotateX(360deg);
-    color: #ff79da;
-  }
-  66% {
-    color: #9356dc;
-  }
-  100% {
-    transform: rotatex(360deg);
-    color: black;
-    opacity: 1;
-  }
-}
-@keyframes display {
-  80% {
-    opacity: 1;
-  }
-  100% {
-    z-index: -10;
-    visibility: hidden;
-    opacity: 0;
-  }
-}
-.loader__container span:nth-child(1) {
-  animation-delay: 0.2s;
-}
-
-.loader__container span:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-.loader__container span:nth-child(3) {
-  animation-delay: 0.6s;
-}
-
-.loader__container span:nth-child(4) {
-  animation-delay: 0.8s;
-}
-
-.loader__container span:nth-child(5) {
-  animation-delay: 1s;
-}
-
-.loader__container span:nth-child(6) {
-  animation-delay: 1.2s;
-}
-
-.loader__container span:nth-child(7) {
-  animation-delay: 1.4s;
-}
-
-.loader__container span:nth-child(8) {
-  animation-delay: 1.6s;
 }
 
 /*# sourceMappingURL=style.css.map */
