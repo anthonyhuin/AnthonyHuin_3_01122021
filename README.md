@@ -38,7 +38,7 @@ l’utilisateur est redirigé vers la page du menu.
 - Le header est présent sur toutes les pages.
 - Sur la page d’accueil, il contient le logo du site.
 - Sur les pages de menu, il contient en plus un bouton de retour vers la page d’accueil
-### Effets graphiques et animations
+# Effets graphiques et animations
 + Les effets accessibles au clic ou au survol sont visibles sur la maquette. Ils devront utiliser
 + les animations ou transitions CSS, pas de JavaScript ni de librairie.
 ### Boutons
