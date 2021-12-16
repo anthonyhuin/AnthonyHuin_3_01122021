@@ -29,13 +29,11 @@
     background-color: rgb(255, 255, 255);
     transition: 1s;
   }
-
   .heart--nofill {
     position: absolute;
     right: 0;
     z-index: 2;
     opacity: 1;
-
     &:hover {
       transition: 1s;
       opacity: 0.5;
@@ -48,7 +46,6 @@
     }
   }
 }
-
 .heartmenu {
   .heart--fill::after {
     background-color: $background-section;
