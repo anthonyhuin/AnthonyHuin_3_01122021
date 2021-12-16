@@ -39,20 +39,20 @@
 .menu__container {
   flex: 1 1 33%;
   min-width: 0;
-  & h3 {
+  h3 {
     font-size: 1rem;
     font-weight: 400;
     position: relative;
     text-transform: uppercase;
-  }
-  & h3::after {
-    position: absolute;
-    content: "";
-    bottom: -8px;
-    left: 0;
-    height: 3px;
-    background-color: $tertiary-color;
-    width: 40px;
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: -8px;
+      left: 0;
+      height: 3px;
+      background-color: $tertiary-color;
+      width: 40px;
+    }
   }
 }
 
@@ -83,7 +83,7 @@
       text-overflow: ellipsis;
 
       overflow: hidden;
-      & b,
+      b,
       span {
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -121,7 +121,7 @@
   background: $background-section;
   max-width: 1400px;
   margin: auto;
-  & .btn {
+  .btn {
     padding: 15px 50px;
   }
 }

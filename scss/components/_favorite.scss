@@ -5,10 +5,10 @@
   font-size: 1.7rem;
   position: relative;
 
-  & i {
+  i {
     transition: 0.2s;
   }
-  & .heart--fill {
+  .heart--fill {
     z-index: 1;
     opacity: 0;
     position: absolute;
@@ -16,26 +16,28 @@
     background: -webkit-linear-gradient(1deg, #9356dc, #ff79da);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-weight: 900;
   }
-  & .heart--fill::after {
+  .heart--fill::after {
     content: "";
     position: absolute;
     z-index: 1;
     height: 2rem;
     width: 2rem;
-    inset: 0;
+    left: 0;
+    right: 0;
     background-color: rgb(255, 255, 255);
-    transition: 0.5s;
+    transition: 1s;
   }
 
-  & .heart--nofill {
+  .heart--nofill {
     position: absolute;
     right: 0;
     z-index: 2;
     opacity: 1;
-    transition: 0.5s;
 
     &:hover {
+      transition: 1s;
       opacity: 0.5;
     }
     &:hover + .heart--fill {
@@ -48,7 +50,7 @@
 }
 
 .heartmenu {
-  & .heart--fill::after {
+  .heart--fill::after {
     background-color: $background-section;
   }
 }
