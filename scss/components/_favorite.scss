@@ -36,7 +36,7 @@
     opacity: 1;
     &:hover {
       transition: 1s;
-      opacity: 0.5;
+      opacity: 1;
     }
     &:hover + .heart--fill {
       opacity: 1;
@@ -49,5 +49,15 @@
 .heartmenu {
   .heart--fill::after {
     background-color: $background-section;
+  }
+}
+
+@keyframes heartfill {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -2rem;
+    border-top-right-radius: 50%;
   }
 }
