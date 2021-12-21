@@ -5,7 +5,7 @@
   color: white;
   padding: 10px 20px 20px 20px;
 
-  @include breakpoint {
+  @include breakpoint-desktop {
     ul {
       display: flex;
       justify-content: space-evenly;
