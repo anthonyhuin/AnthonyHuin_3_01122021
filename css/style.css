@@ -86,7 +86,7 @@ li {
   animation: heartfill 1s ease-in-out forwards;
 }
 
-.heartmenu .heart--fill::after {
+.heartproduct .heart--fill::after {
   background-color: #f6f6f6;
 }
 
